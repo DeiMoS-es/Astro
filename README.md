@@ -1,2 +1,2 @@
 # Astro
-Repositorio para proyectos Con Astro
+Repositorio para proyectos con Astro
