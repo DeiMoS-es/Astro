@@ -1,15 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+import AboutMe from '../components/AboutMe.astro';
 import Badge from '../components/Badge.astro';
-import SocialPill from '../components/SocialPill.astro';
-import LinkedInIcon from '../icons/LinkedIn.astro';
-import GitHubIcon from '../icons/GitHub.astro';
-import MailIcon from '../icons/Mail.astro';
-import Experience from '../components/Experience.astro';
-import SectionContainer from '../components/SectionContainer.astro';
 import Briefecase from '../icons/Briefecase.astro';
 import CodeIcon from '../icons/Code.astro';
+import Experience from '../components/Experience.astro';
+import GitHubIcon from '../icons/GitHub.astro';
+import LinkedInIcon from '../icons/LinkedIn.astro';
+import MailIcon from '../icons/Mail.astro';
+import ProfileCheck from '@/icons/ProfileCheck.astro';
 import Projects from '../components/Projects.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import SocialPill from '../components/SocialPill.astro';
 ---
 
 <Layout title="Porfolio de Nagib - Desarrollador y Programador Web" description="Contrata a Nagib para crear tu aplicación web.">
@@ -59,6 +62,14 @@ import Projects from '../components/Projects.astro';
 				Proyectos
 			</h2>
 			<Projects />
+		</SectionContainer>
+
+		<SectionContainer id="sobre-mi">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<ProfileCheck class="size-7" />
+				Sobre mi
+			</h2>
+			<AboutMe />
 		</SectionContainer>
 	</main>
 
