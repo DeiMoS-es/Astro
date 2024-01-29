@@ -52,3 +52,6 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+Instalo tailwind usando el comando npx astro add tailwind.
+Modifico el archivo tailwind.config.mjs y añado: darkMode: 'class'
