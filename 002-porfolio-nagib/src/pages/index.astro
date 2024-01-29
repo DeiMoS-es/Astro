@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Badge from "../components/Badge.astro";
+import LinkedInIcon from "../icons/LinkedIn.astro";
 ---
 
 <Layout title="Porfolio Nagib">
@@ -14,14 +15,19 @@ import Badge from "../components/Badge.astro";
 					<Badge>Disponible para trabajar</Badge>
 				</a>
 			</h1>
-			<h2 class="text-xl opacity-80">
-				+2 años experiencia.
-				
-					Desarrollador aplicaciones Web.
-				
-				De Gran Canaria, España.
+			<h2 class="text-2xl text-wrap">
+				<span class="">+2 años experiencia.</span>				
+				<span class="text-yellow-200/90">Desarrollador aplicaciones Web.</span>				
+				<span class="text-red-200/90">De Gran Canaria, España.</span>
 			</h2>
-			<ul></ul>
+			<ul>
+				<li>
+					<a href="https://www.linkedin.com/in/nagib-delgado-morales-5456101b6/">
+						<LinkedInIcon class="size-6" />
+						LinkedIn
+					</a>
+				</li>
+			</ul>
 		</section>
 	</main>
 </Layout>
