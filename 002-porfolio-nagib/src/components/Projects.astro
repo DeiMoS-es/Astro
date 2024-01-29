@@ -1,0 +1,36 @@
+---
+import NodeJs from "../icons/NodeJs.astro"
+
+const TAGS = {
+    NEXT: {
+        name: 'NodeJs',
+        class: 'bg-black text-white',
+        icon: NodeJs
+    }
+}
+const PROJETS = [
+    {
+        title: 'Aplicación Información Tarifa Electricidad',
+        description: 'Esta aplicación consta de la parte de BackEnd cy FrontEnd',
+        link: 'https://app-tarifa-luz-front.vercel.app/precios',
+        github: 'https://github.com/DeiMoS-es/appTarifaLuzFront',
+        image: 'img/projects/luz.webp',
+        tags: [TAGS.NEXT, 'Express', 'Angular']
+    }
+];
+---
+
+{
+    PROJETS.map(({title, image, description, tags}) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul>
+                {tags.map(tag => (
+                    <li>{tag}</li>
+                ))}
+            </ul>
+            <img class="rounded shadow-2xl shadow-white/10" src={image} alt={`Captura de pantalla del proyecto ${image}`}>
+        </article>
+    ))
+}
