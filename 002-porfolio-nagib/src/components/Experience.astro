@@ -1,0 +1,38 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+    {
+        date: 'Junio-2022 Actualidad',
+        title: 'Programador Junior PhP/JavaScript - Hiberus Tecnología',
+        description: 'Participación en aplicación web de la empresa para subidas de CV usando Symphoy. Desarrollos en PhP y JavaScript para cliente.',
+        link: '#'
+    },
+    {
+      date: "Marzo-2022 Junio-2022",
+      title: "Practicas - Hiberus Tecnología",
+      description:
+        "Desarrollo mis prácticas en el departamento de Data, desarrollando plantillas de visualización de datos en Java y Dashboards.",
+    }
+];
+
+const latestExperience = EXPERIENCE.reduce((latest, current) => {
+  const latestDate = new Date(latest.date).getTime();
+  const currentDate = new Date(current.date).getTime();
+  return currentDate > latestDate ? current : latest;
+}, EXPERIENCE[0]);
+---
+
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">    
+    {
+        EXPERIENCE.map(experience => (
+            <li class="mb-10 ms-6">            
+                <ExperienceItem {...experience} isLatest={experience === latestExperience}/>
+            </li>
+        ))
+    }              
+
+    
+</ol>
+
