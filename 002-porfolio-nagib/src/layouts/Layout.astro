@@ -1,4 +1,6 @@
 ---
+// Supports weights 100-900
+import '@fontsource-variable/onest';
 import Header from '../components/Header.astro';
 
 interface Props {
@@ -28,12 +30,12 @@ const { title } = Astro.props;
 		color-scheme: light dark;
 	}
 	html {
-		font-family: system-ui, sans-serif;
+		font-family:  'Onest Variable',system-ui, sans-serif;
 	}
 	body{
 		background: #050505;
 		display: flex;
-		justify-content: center;
+		flex-direction: column;
 		min-height: 100vh;
 	}
 	

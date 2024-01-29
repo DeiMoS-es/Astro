@@ -1,7 +1,27 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Badge from "../components/Badge.astro";
 ---
 
 <Layout title="Porfolio Nagib">
+	<main>
+		<section class="w-full lg:w-[740px] mx-auto py-44">
+			<img class="rounded-full size-12 mb-4" src="/img/yo.jpg" alt="foto nagib">
+			<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
+				Hey, soy Nagib 
+				<a href="https://www.linkedin.com/in/nagib-delgado-morales-5456101b6/" target="_blank" rel="noopener" class="flex justify-center items-center">
+					<Badge>Disponible para trabajar</Badge>
+				</a>
+			</h1>
+			<h2 class="text-xl opacity-80">
+				+2 años experiencia.
+				
+					Desarrollador aplicaciones Web.
+				
+				De Gran Canaria, España.
+			</h2>
+			<ul></ul>
+		</section>
+	</main>
 </Layout>
