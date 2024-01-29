@@ -15,24 +15,16 @@ const EXPERIENCE = [
         "Desarrollo mis prácticas en el departamento de Data, desarrollando plantillas de visualización de datos en Java y Dashboards.",
     }
 ];
-
-const latestExperience = EXPERIENCE.reduce((latest, current) => {
-  const latestDate = new Date(latest.date).getTime();
-  const currentDate = new Date(current.date).getTime();
-  return currentDate > latestDate ? current : latest;
-}, EXPERIENCE[0]);
 ---
-
 
 <ol class="relative border-s border-gray-200 dark:border-gray-700">    
     {
-        EXPERIENCE.map(experience => (
+        EXPERIENCE.map((experience, index) => (
             <li class="mb-10 ms-6">            
-                <ExperienceItem {...experience} isLatest={experience === latestExperience}/>
+                <ExperienceItem {...experience} isLatest={index === 0}/>
             </li>
         ))
     }              
-
     
 </ol>
 

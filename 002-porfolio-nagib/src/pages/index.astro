@@ -7,11 +7,13 @@ import SocialPill from "../components/SocialPill.astro";
 import GitHubIcon from "../icons/GitHub.astro";
 import MailIcon from "../icons/Mail.astro";
 import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Briefcase from "../icons/Briefcase.astro";
 ---
 
 <Layout title="Porfolio de Nagib - Desarrollador y Programador Web" description="Contratame para crear tu aplicación web">
 	<main>
-		<section class="w-full lg:w-[740px] mx-auto py-44">
+		<SectionContainer class="py-44 pb-20">
 			<img class="rounded-full size-12 mb-4" src="/img/yo.jpg" alt="foto nagib">
 			<h1 class="text-white text-5xl font-bold flex flex-row gap-x-2 pb-10">
 				Hey, soy Nagib 
@@ -38,10 +40,14 @@ import Experience from "../components/Experience.astro";
 					nagib.86@gmail.com
 				</SocialPill>
 			</nav>
-		</section>
+		</SectionContainer>
 
-		<section>
+		<SectionContainer id="experiencia">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+				<Briefcase class="size-7"/>
+				Experiencia laboral
+			</h2>
 			<Experience />
-		</section>
+		</SectionContainer>
 	</main>
 </Layout>
