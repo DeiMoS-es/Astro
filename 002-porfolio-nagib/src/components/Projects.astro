@@ -1,21 +1,33 @@
 ---
-import NodeJs from "../icons/NodeJs.astro"
+import NodeJs from "../icons/NodeJs.astro";
+import Taildwind from "../icons/Taildwind.astro";
+import Angular from "../icons/Angular.astro";
 
 const TAGS = {
-    NEXT: {
+    NODE: {
         name: 'NodeJs',
         class: 'bg-black text-white',
         icon: NodeJs
+    },
+    TAILDWIND: {
+        name: 'Taildwind CSS',
+        class: 'bg-[#003159] text-white',
+        icon: Taildwind
+    },
+    ANGULAR: {
+        name: 'Angular JS',
+        class: 'text-white bg-red',
+        icon: Angular
     }
 }
 const PROJETS = [
     {
         title: 'Aplicación Información Tarifa Electricidad',
-        description: 'Esta aplicación consta de la parte de BackEnd cy FrontEnd',
+        description: 'Esta aplicación consta de la parte de BackEnd la cual se conecta a la Api de redApi para obtener los datos y FrontEnd realizado con Angular para la visualización de los datos',
         link: 'https://app-tarifa-luz-front.vercel.app/precios',
         github: 'https://github.com/DeiMoS-es/appTarifaLuzFront',
         image: 'img/projects/luz.webp',
-        tags: [TAGS.NEXT, 'Express', 'Angular']
+        tags: [TAGS.NODE, TAGS.TAILDWIND, TAGS.ANGULAR]
     }
 ];
 ---
@@ -25,9 +37,14 @@ const PROJETS = [
         <article>
             <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
             <p class="text-lg mb-4 text-pretty">{description}</p>
-            <ul>
+            <ul class="flex gap-x-2 flex-row mb-2">
                 {tags.map(tag => (
-                    <li>{tag}</li>
+                    <li>
+                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                            <tag.icon class="size-4"/>
+                            {tag.name}
+                        </span>
+                    </li>
                 ))}
             </ul>
             <img class="rounded shadow-2xl shadow-white/10" src={image} alt={`Captura de pantalla del proyecto ${image}`}>
