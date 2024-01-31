@@ -2,6 +2,11 @@
 import NodeJs from "../icons/NodeJs.astro";
 import Taildwind from "../icons/Taildwind.astro";
 import Angular from "../icons/Angular.astro";
+import LinkButton from "./LinkButton.astro";
+import GitHubIcon from "@/icons/GitHub.astro";
+import WebIcon from "@/icons/Web.astro";
+import SpringIcon from "../icons/Spring.astro";
+import MySQLIcon from "../icons/MySQL.astro";
 
 const TAGS = {
     NODE: {
@@ -18,6 +23,16 @@ const TAGS = {
         name: 'Angular JS',
         class: 'text-white bg-red',
         icon: Angular
+    },
+    SPRINGBOOT: {
+        name: 'SpringBoot',
+        class: 'text-white bg-red',
+        icon: SpringIcon
+    },
+    MySQL: {
+        name: 'MySQL',
+        class: 'text-white bg-red',
+        icon: MySQLIcon
     }
 }
 const PROJETS = [
@@ -28,12 +43,20 @@ const PROJETS = [
         github: 'https://github.com/DeiMoS-es/appTarifaLuzFront',
         image: 'img/projects/luz.webp',
         tags: [TAGS.NODE, TAGS.TAILDWIND, TAGS.ANGULAR]
+    },
+    {
+        title: 'Aplicación CRUD FullStack',
+        description: 'Esta aplicación es una tienda online que utiliza Spring Boot para el backend y Angular para el frontend. La gestión de datos se realiza mediante una base de datos MySQL, permitiendo a los usuarios llevar a cabo operaciones CRUD de artículos. Destaca por su eficiente almacenamiento de imágenes a través de la integración con Cloudinary, una plataforma de gestión de activos multimedia en la nube. La seguridad se refuerza con un sistema basado en JSON Web Tokens (JWT), que garantiza autenticación y autorización apropiadas para transacciones seguras y operaciones en la tienda online. ',
+        // link: '',
+        github: 'https://github.com/DeiMoS-es/Angular/tree/main/013-spring-apirest-front',
+        image: 'img/projects/apiRest.webp',
+        tags: [TAGS.SPRINGBOOT, TAGS.TAILDWIND, TAGS.MySQL]
     }
 ];
 ---
-
+<section class="flex flex-col gap-y-16">
 {
-    PROJETS.map(({title, image, description, tags}) => (
+    PROJETS.map(({title, image, description, tags, link, github}) => (
         <article>
             <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
             <p class="text-lg mb-4 text-pretty">{description}</p>
@@ -48,6 +71,18 @@ const PROJETS = [
                 ))}
             </ul>
             <img class="rounded shadow-2xl shadow-white/10" src={image} alt={`Captura de pantalla del proyecto ${image}`}>
+            <footer class="flex gap-x-4 mt-4">
+                {github && <LinkButton href={github}>
+                        <GitHubIcon class="size-6"/> Ver código fuente
+                    </LinkButton>
+                }
+                {link &&<LinkButton>
+                    <WebIcon />
+                    Ir al sitio Web
+                </LinkButton>
+            }
+            </footer>
         </article>
     ))
 }
+</section>
