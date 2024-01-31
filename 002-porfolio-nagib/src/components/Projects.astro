@@ -7,6 +7,10 @@ import GitHubIcon from "@/icons/GitHub.astro";
 import WebIcon from "@/icons/Web.astro";
 import SpringIcon from "../icons/Spring.astro";
 import MySQLIcon from "../icons/MySQL.astro";
+import JavaScriptIcon from "../icons/JavaScript.astro";
+import CSSIcon from "../icons/Css.astro";
+import HtmlIcon from "../icons/Html.astro";
+import JqueryIcon from "../icons/Jquery.astro";
 
 const TAGS = {
     NODE: {
@@ -33,6 +37,26 @@ const TAGS = {
         name: 'MySQL',
         class: 'text-white bg-red',
         icon: MySQLIcon
+    },
+    JAVASCRIPT: {
+        name: 'JavaScript',
+        class: 'text-white bg-red',
+        icon: JavaScriptIcon
+    },
+    CSS: {
+        name: 'CSS',
+        class: 'text-white bg-red',
+        icon: CSSIcon
+    },
+    HTML: {
+        name: 'Html',
+        class: 'text-white bg-red',
+        icon: HtmlIcon
+    },
+    JQUERY: {
+        name: 'Jquery',
+        class: 'text-white bg-red',
+        icon: JqueryIcon
     }
 }
 const PROJETS = [
@@ -43,6 +67,13 @@ const PROJETS = [
         github: 'https://github.com/DeiMoS-es/appTarifaLuzFront',
         image: 'img/projects/luz.webp',
         tags: [TAGS.NODE, TAGS.TAILDWIND, TAGS.ANGULAR]
+    },
+    {
+        title: 'Tracker de precio de productos',
+        description: 'Infografía desarrollada para cliente para el seguimiento del precio sobre productos y servicios',
+        link: 'https://www.rtve.es/noticias/20240112/ipc-cesta-compra-variacion-ultimo-mes/2405889.shtml',
+        image: 'img/projects/rtve.webp',
+        tags: [TAGS.JAVASCRIPT, TAGS.CSS, TAGS.HTML, TAGS.JQUERY]
     },
     {
         title: 'Aplicación CRUD FullStack',
