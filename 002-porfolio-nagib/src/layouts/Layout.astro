@@ -15,17 +15,19 @@ const { title, description } = Astro.props;
 <!doctype html>
 <html lang="es">
 	<head>
-		<!-- Google tag (gtag.js) -->
-		<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=GTM-NFGT3J6Z"></script>
-		<script type="text/partytown">
-		    window.dataLayer = window.dataLayer || [];
-		    function gtag(){dataLayer.push(arguments);}
-		    gtag('js', new Date());
-		
-		    gtag('config', 'GTM-NFGT3J6Z');
-		</script>
-		<!-- End Google Tag Manager -->
-	
+	<!-- Google Tag Manager -->
+	<script type="text/partytown">
+		(function(w,d,s,l,i){w[l]=w[l]||[];
+			w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+			var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+				j.async=true;
+				j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;
+				f.parentNode.insertBefore(j,f);
+		})
+		(window,document,'script','dataLayer','GTM-T7ZHV2WL');
+	</script>
+	<!-- End Google Tag Manager -->
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
@@ -36,7 +38,7 @@ const { title, description } = Astro.props;
 	<body>
 		<!-- Google Tag Manager (noscript) -->
 		<noscript>
-			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFGT3J6Z" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T7ZHV2WL" height="0" width="0" style="display:none;visibility:hidden"></iframe>
 		</noscript>
 		<!-- End Google Tag Manager (noscript) -->
 		<div class="absolute top-0 z-[-2] h-screen w-screen bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
