@@ -10,7 +10,7 @@ export default defineConfig({
     tailwind(), 
     partytown({
       config: {
-          forward: ['dataLayer.push']
+          forward: ['datalayer.push']
       }
     })
   ]
