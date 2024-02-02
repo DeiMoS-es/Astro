@@ -1,0 +1,64 @@
+
+<section class="dark:bg-gray-900">
+    <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+        <p class="mb-8 lg:mb-16 font-light text-center sm:text-xl">
+            ¿Tienes alguna pregunta o comentario? No dudes en escribirme, estaré encantado de ayudarte.
+        </p>
+        <form id="myForm" action="https://formspree.io/f/moqgejvq" method="POST" class="space-y-8">
+            <div>
+                <label for="email" class="block mb-2 font-medium text-yellow-400 text-xl">Tu dirección de correo electrónico</label>
+                <input name="email" type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="ejemplo@gmail.com" required>
+            </div>
+            <div>
+                <label for="subject" class="block mb-2 font-medium text-yellow-400 text-xl">¿Cómo puedo ayudarte?</label>
+                <input name="subject" type="text" id="subject" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Dime, ¿cómo puedo ser de ayuda para ti?" required>
+            </div>
+            <div class="sm:col-span-2">
+                <label for="message" class="block mb-2 font-medium text-yellow-400 text-xl">¿Qué te gustaría compartir conmigo?</label>
+                <textarea name="message" id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Deja tu idea..."></textarea>
+            </div>
+            <div class="flex justify-center">
+                <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                  Enviar mensaje
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+<div id="successMessage" class="invisible fixed top-0 left-0 w-full h-full flex items-center justify-center z-50">
+    <div class="bg-green-500 text-white font-bold rounded-lg border shadow-lg p-10">
+      Formulario enviado con éxito
+    </div>
+  </div>
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        const form = document.getElementById('myForm');
+        
+        if (form instanceof HTMLFormElement) {
+            form.addEventListener('submit', function(e){
+              e.preventDefault();
+              fetch(this.action, {
+                method: 'POST',
+                body: new FormData(this),
+              })
+              .then(response => {
+                if (response.ok) {
+                    const successMessage = document.getElementById('successMessage');
+                  // Muestra el mensaje de éxito en el div
+                  successMessage!.classList.remove('hidden');
+                  // Oculta el mensaje de éxito después de 2 segundos
+                  setTimeout(function() {
+                    successMessage!.classList.add('hidden');
+                  }, 2000);
+                } else {
+                  alert('Hubo un error al enviar el formulario');
+                }
+              })
+              .catch(error => {
+                console.error('Error:', error);
+              });
+            });
+        }
+    });
+    </script>
+    

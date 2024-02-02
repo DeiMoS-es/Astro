@@ -12,6 +12,7 @@ import ProfileCheck from "@/icons/ProfileCheck.astro";
 import Projects from "../components/Projects.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import SocialPill from "../components/SocialPill.astro";
+import Contacto from "../components/Contacto.astro";
 ---
 
 <Layout title="Porfolio de Nagib - Desarrollador y Programador Web" description="Contratame para crear tu aplicación web">
@@ -69,6 +70,13 @@ import SocialPill from "../components/SocialPill.astro";
 				Sobre mi
 			</h2>
 			<AboutMe />
+		</SectionContainer>
+
+		<SectionContainer id="contacto" class="flex flex-col">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				Contacto				
+			</h2>
+			<Contacto />
 		</SectionContainer>
 	</main>
 </Layout>
