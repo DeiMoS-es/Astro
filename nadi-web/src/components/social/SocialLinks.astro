@@ -1,0 +1,29 @@
+---
+import SocialItem from "./SocialItem.astro";
+const REDES = [
+    // { name: "Twitter", url: "https://twitter.com/nadiadonado", icon: "twitter" },
+    { name: "Instagram", url: "https://www.instagram.com/nadira.psicologia/", icon: "instagram" },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/nadira-delgado-morales-249315159/", icon: "linkedin" },
+]
+---
+<ol class="socials">
+    {
+        REDES.map((red) => (
+            <li class="socialLink">
+                <SocialItem name={red.name} url={red.url} icon={red.icon}/>
+            </li>
+        ))
+    }
+</ol>
+<style>
+    .socials {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        list-style: none;
+        padding: 0;
+    }
+    .socialLink {
+        display: inline-block;
+    }
+</style>

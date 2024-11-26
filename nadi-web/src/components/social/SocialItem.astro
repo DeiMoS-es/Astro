@@ -1,0 +1,21 @@
+---
+    export interface Props {
+        name: string;
+        url: string;
+        icon: string;
+    }
+
+    const { name, url, icon } = Astro.props;
+---
+<a href={url} target="_blank" rel="noopener noreferrer">
+    <img src={`/img/icons/${icon}-icon.png`} alt={`${name}`}>
+</a>
+
+<style> 
+a { display: inline-block; } 
+img { 
+    width: 30px; 
+    height: 30px; 
+    transition: transform 0.3s ease; } 
+img:hover { transform: scale(2.2); } 
+</style>
