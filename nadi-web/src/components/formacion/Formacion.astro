@@ -1,15 +1,18 @@
 ---
+import { date } from "astro:schema";
 import "./Formacion.css";
 const SERVICIOS = [
     {
         title: "Diseño Web",
         description: "Diseño de páginas web a medida, adaptadas a tus necesidades y objetivos.",
         icon: "brain.png",
+        date: "10-09-2022",
     },
     {
         title: "Desarrollo Web",
         description: "Desarrollo de páginas web con tecnologías modernas y escalables.",
         icon: "psychology.png",
+        date: "10-09-2022",
     },
     {
         title: "SEO",
@@ -20,11 +23,13 @@ const SERVICIOS = [
         title: "Mantenimiento Web",
         description: "Mantenimiento y actualización de tu página web para que siempre esté al día.",
         icon: "psychology.png",
+        date: "10-09-2022",
     },
     {
         title: "Tiendas Online",
         description: "Diseño y desarrollo de tiendas online para vender tus productos en internet.",
         icon: "brain.png",
+        date: "10-09-2022",
     },
 ]
 ---
@@ -36,7 +41,8 @@ const SERVICIOS = [
                 <li class="service">
                     <img src={`/img/servicios/${servicio.icon}`} alt={servicio.title}/>
                     <h3>{servicio.title}</h3>
-                    <p>{servicio.description}</p>
+                    <p class="date">{servicio.date}</p>
+                    <p class="description">{servicio.description}</p>
                 </li>
             ))
         }

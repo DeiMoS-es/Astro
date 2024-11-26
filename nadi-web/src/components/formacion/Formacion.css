@@ -43,6 +43,6 @@
 .services ul li h3{
     margin-bottom: 0.5rem;
 }
-.services ul li p{
-    margin-bottom: 1rem;
+.services ul li p.date{
+    margin-bottom: 0.3rem;
 }
