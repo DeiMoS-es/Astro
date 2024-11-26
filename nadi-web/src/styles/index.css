@@ -1,0 +1,25 @@
+main{
+    width: 100vw;
+    height: 50vh;
+    margin-top: 1rem;
+}
+.personal{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.personal .saludo{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #331047;
+    text-align: center;
+    width: 24rem;
+}
+.personal .textBox{
+    width: 24rem;
+    margin: 1rem;
+}
+.personal .imgBox img{
+    border-radius: 50%;
+}
