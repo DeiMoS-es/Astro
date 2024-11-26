@@ -1,0 +1,44 @@
+---
+import "./Formacion.css";
+const SERVICIOS = [
+    {
+        title: "Diseño Web",
+        description: "Diseño de páginas web a medida, adaptadas a tus necesidades y objetivos.",
+        icon: "brain.png",
+    },
+    {
+        title: "Desarrollo Web",
+        description: "Desarrollo de páginas web con tecnologías modernas y escalables.",
+        icon: "psychology.png",
+    },
+    {
+        title: "SEO",
+        description: "Optimización de tu página web para mejorar su posicionamiento en buscadores.",
+        icon: "brain.png",
+    },
+    {
+        title: "Mantenimiento Web",
+        description: "Mantenimiento y actualización de tu página web para que siempre esté al día.",
+        icon: "psychology.png",
+    },
+    {
+        title: "Tiendas Online",
+        description: "Diseño y desarrollo de tiendas online para vender tus productos en internet.",
+        icon: "brain.png",
+    },
+]
+---
+<section class="services">
+    <h2>Formación</h2>
+    <ul>
+        {
+            SERVICIOS.map((servicio) => (
+                <li class="service">
+                    <img src={`/img/servicios/${servicio.icon}`} alt={servicio.title}/>
+                    <h3>{servicio.title}</h3>
+                    <p>{servicio.description}</p>
+                </li>
+            ))
+        }
+    </ul>
+</section>
