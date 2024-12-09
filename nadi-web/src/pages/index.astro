@@ -2,23 +2,22 @@
 import "../styles/reset.css";
 import "../styles/index.css";
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/header/Header.astro';
-import Footer from '../components/footer/Footer.astro';
 import SocialLinks from "../components/social/SocialLinks.astro";
 import Formacion from "../components/formacion/Formacion.astro";
 ---
+<!-- página principal (home) -->
 <Layout title="Welcome to NadiWeb.">	
-	<Header />
-	<main>
-		<div class="personal">
-			<span class="saludo"><h2>¡Hola! Soy Nadira Delgado</h2></span>
-			<span class="textBox">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam perferendis, rerum sequi distinctio, voluptatem assumenda sunt hic natus possimus consequatur libero eos earum itaque totam quibusdam magni eligendi molestiae minus!</span>			
-			<span class="imgBox">
-				<img src="/img/avatar.jpg" alt="Img de nadira"> 
-			</span>
-		</div>
-	</main>
+	<div class="personal">
+		<span class="saludo"><h2>¡Hola! Soy Nadira Delgado</h2></span>
+		<span class="textBox">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam perferendis, rerum sequi distinctio, voluptatem assumenda sunt hic natus possimus consequatur libero eos earum itaque totam quibusdam magni eligendi molestiae minus!</span>			
+		<span class="imgBox">
+			<img src="/img/avatar.jpg" alt="Img de nadira"> 
+		</span>
+	</div>
+	<!-- <section class="cita">
+		<h2>¿Listo para Empezar tu Viaje de Bienestar?</h2>
+		<a href="" target="_blank" class="btn">Pide tu Cita</a> 
+	</section>-->
 	<Formacion />
 	<SocialLinks />
-	<Footer />	
 </Layout>

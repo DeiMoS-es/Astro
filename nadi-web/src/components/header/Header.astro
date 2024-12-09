@@ -1,13 +1,14 @@
 ---
 import "./Header.css";
+import HeaderButton from "./HeaderButton.astro";
 ---
 <header>
     <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h1>
     <nav>
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">Sobre Mi</a></li>
-            <li><a href="/services">Servicios</a></li>
+            <li><HeaderButton href="/">Home</HeaderButton></li>
+            <li><HeaderButton href="/aboutMe">Sobre Mi</HeaderButton></li>
+            <li><HeaderButton href="/services">Servicios</HeaderButton></li>
         </ul>
     </nav>
 </header>

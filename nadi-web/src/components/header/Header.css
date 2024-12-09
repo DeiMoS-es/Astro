@@ -19,6 +19,7 @@ nav a {
     display: block;
     text-decoration: none;
     transition: transform 0.3s ease, text-decoration 0.3s ease;
+    color: white;
 }
 nav a:hover {
     text-decoration: underline;

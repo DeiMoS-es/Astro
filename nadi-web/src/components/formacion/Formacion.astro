@@ -3,9 +3,9 @@ import { date } from "astro:schema";
 import "./Formacion.css";
 const SERVICIOS = [
     {
-        title: "Diseño Web",
+        title: "Psicologa ULL",
         description: "Diseño de páginas web a medida, adaptadas a tus necesidades y objetivos.",
-        icon: "brain.png",
+        icon: "universidad-de-la-laguna.png",
         date: "10-09-2022",
     },
     {
@@ -39,7 +39,7 @@ const SERVICIOS = [
         {
             SERVICIOS.map((servicio) => (
                 <li class="service">
-                    <img src={`/img/servicios/${servicio.icon}`} alt={servicio.title}/>
+                    <img src={`/img/estudios/${servicio.icon}`} alt={servicio.title}/>
                     <h3>{servicio.title}</h3>
                     <p class="date">{servicio.date}</p>
                     <p class="description">{servicio.description}</p>
