@@ -1,5 +1,19 @@
 ---
+import Papa from "papaparse";
 import Layout from "../layouts/Layout.astro";
+const res = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQ9MAoGS7C6iChQCUYq5x8czgdiANxkNYxTA4iGjiWMIUgz28a8GJEUKbGKwhiB_y-HgJi72EzO0DNK/pub?gid=0&single=true&output=csv");
+const data = await res.text();
+const parsedData = Papa.parse(data, { header: true });
+// Filtrar para obtener la URL de la pestaña 'cv'
+const cvData = parsedData.data.find(item => item.pestaña === 'cv');
+let cvParsedData = null;
+if (cvData) {
+  // Obtener los datos del CSV de la pestaña 'cv'
+  const cvRes = await fetch(cvData.url);
+  const cvText = await cvRes.text();
+  cvParsedData = Papa.parse(cvText, { header: true });
+}
+console.log(cvParsedData);
 ---
 <Layout title="Sobre mi">
     <h1>Aqui hablo sobre mi</h1>
