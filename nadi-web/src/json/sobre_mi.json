@@ -1,0 +1,52 @@
+[
+  {
+    "grupo": "Datos personales",
+    "clave": "nombre",
+    "valor": "John Doe"
+  },
+  {
+    "grupo": "Datos personales",
+    "clave": "apellido",
+    "valor": "Smith"
+  },
+  {
+    "grupo": "Datos personales",
+    "clave": "edad",
+    "valor": "30"
+  },
+  {
+    "grupo": "Formación Académica",
+    "clave": "grado",
+    "valor": "Licenciatura"
+  },
+  {
+    "grupo": "Formación Académica",
+    "clave": "universidad",
+    "valor": "Universidad de ABC"
+  },
+  {
+    "grupo": "Formación Académica",
+    "clave": "anio_inicio",
+    "valor": "2020"
+  },
+  {
+    "grupo": "Formación Académica",
+    "clave": "anio_fin",
+    "valor": "2024"
+  },
+  {
+    "grupo": "Experiencia Laboral",
+    "clave": "puesto",
+    "valor": "Desarrollador Junior"
+  },
+  {
+    "grupo": "Experiencia Laboral",
+    "clave": "empresa",
+    "valor": "TechCorp"
+  },
+  {
+    "grupo": "Experiencia Laboral",
+    "clave": "años",
+    "valor": "2"
+  }
+]
