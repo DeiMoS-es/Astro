@@ -11,110 +11,129 @@ import NodeJs from "../icons/NodeJs.astro";
 import SpringIcon from "../icons/Spring.astro";
 import Taildwind from "../icons/Taildwind.astro";
 import WebIcon from "@/icons/Web.astro";
+import PHPIcon from "@/icons/Php.astro";
 
 const TAGS = {
-    NODE: {
-        name: 'NodeJs',
-        class: 'bg-black text-white',
-        icon: NodeJs
-    },
-    TAILDWIND: {
-        name: 'Taildwind CSS',
-        class: 'bg-[#003159] text-white',
-        icon: Taildwind
-    },
-    ANGULAR: {
-        name: 'Angular JS',
-        class: 'text-white bg-red',
-        icon: Angular
-    },
-    SPRINGBOOT: {
-        name: 'SpringBoot',
-        class: 'text-white bg-red',
-        icon: SpringIcon
-    },
-    MySQL: {
-        name: 'MySQL',
-        class: 'text-white bg-red',
-        icon: MySQLIcon
-    },
-    JAVASCRIPT: {
-        name: 'JavaScript',
-        class: 'text-white bg-red',
-        icon: JavaScriptIcon
-    },
-    CSS: {
-        name: 'CSS',
-        class: 'text-white bg-red',
-        icon: CSSIcon
-    },
-    HTML: {
-        name: 'Html',
-        class: 'text-white bg-red',
-        icon: HtmlIcon
-    },
-    JQUERY: {
-        name: 'Jquery',
-        class: 'text-white bg-red',
-        icon: JqueryIcon
-    }
-}
+  NODE: {
+    name: "NodeJs",
+    class: "bg-black text-white",
+    icon: NodeJs,
+  },
+  TAILDWIND: {
+    name: "Taildwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Taildwind,
+  },
+  ANGULAR: {
+    name: "Angular JS",
+    class: "text-white bg-red",
+    icon: Angular,
+  },
+  SPRINGBOOT: {
+    name: "SpringBoot",
+    class: "text-white bg-red",
+    icon: SpringIcon,
+  },
+  MySQL: {
+    name: "MySQL",
+    class: "text-white bg-red",
+    icon: MySQLIcon,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "text-white bg-red",
+    icon: JavaScriptIcon,
+  },
+  CSS: {
+    name: "CSS",
+    class: "text-white bg-red",
+    icon: CSSIcon,
+  },
+  HTML: {
+    name: "Html",
+    class: "text-white bg-red",
+    icon: HtmlIcon,
+  },
+  JQUERY: {
+    name: "Jquery",
+    class: "text-white bg-red",
+    icon: JqueryIcon,
+  },
+  PHP:{
+    name: "PHP",
+    class: "text-white bg-red",
+    icon: PHPIcon,
+  }
+};
 
 const PROJETS = [
-    {
-        title: 'Aplicación Información Tarifa Electricidad',
-        description: 'Esta aplicación consta de la parte de BackEnd la cual se conecta a la Api de redApi para obtener los datos y FrontEnd realizado con Angular para la visualización de los datos',
-        link: 'https://app-tarifa-luz-front.vercel.app/precios',
-        github: 'https://github.com/DeiMoS-es/appTarifaLuzFront',
-        image: 'img/projects/luz.webp',
-        tags: [TAGS.NODE, TAGS.TAILDWIND, TAGS.ANGULAR]
-    },
-    {
-        title: 'Tracker de precio de productos',
-        description: 'Infografía desarrollada para cliente para el seguimiento del precio sobre productos y servicios',
-        link: 'https://www.rtve.es/noticias/20240112/ipc-cesta-compra-variacion-ultimo-mes/2405889.shtml',
-        image: 'img/projects/rtve.webp',
-        tags: [TAGS.JAVASCRIPT, TAGS.CSS, TAGS.HTML, TAGS.JQUERY]
-    },
-    {
-        title: 'Aplicación CRUD FullStack',
-        description: 'Esta aplicación es una tienda online que utiliza Spring Boot para el backend y Angular para el frontend. La gestión de datos se realiza mediante una base de datos MySQL, permitiendo a los usuarios llevar a cabo operaciones CRUD de artículos. Destaca por su eficiente almacenamiento de imágenes a través de la integración con Cloudinary, una plataforma de gestión de activos multimedia en la nube. La seguridad se refuerza con un sistema basado en JSON Web Tokens (JWT), que garantiza autenticación y autorización apropiadas para transacciones seguras y operaciones en la tienda online. ',
-        // link: '',
-        github: 'https://github.com/DeiMoS-es/Angular/tree/main/013-spring-apirest-front',
-        image: 'img/projects/apiRest.webp',
-        tags: [TAGS.SPRINGBOOT, TAGS.TAILDWIND, TAGS.MySQL]
-    }
+  {
+    title: "Tracker de precio de productos",
+    description:
+      "Infografía desarrollada para cliente para el seguimiento del precio sobre productos y servicios. Se realiza una llamada para obtener los datos, se filtran, agrupan y realizan los cálculos para generar los gráficos",
+    link: "https://www.rtve.es/noticias/20240215/ipc-lista-compra-chocolate-luz-turismo-mayores-subidas-2024/15949297.shtml",
+    image: "img/projects/rtve.webp",
+    tags: [TAGS.PHP,TAGS.JAVASCRIPT, TAGS.CSS, TAGS.HTML, TAGS.JQUERY],
+  },
+  {
+    title: "Aplicación Información Tarifa Electricidad",
+    description:
+      "Esta aplicación consta de la parte de BackEnd la cual se conecta a la Api de redApi para obtener los datos y FrontEnd realizado con Angular para la visualización de los datos",
+    link: "https://app-tarifa-luz-front.vercel.app/precios",
+    github: "https://github.com/DeiMoS-es/appTarifaLuzFront",
+    image: "img/projects/luz.webp",
+    tags: [TAGS.NODE, TAGS.TAILDWIND, TAGS.ANGULAR],
+  },
+  {
+    title: "Aplicación CRUD FullStack",
+    description:
+      "Esta aplicación es una tienda online que utiliza Spring Boot para el backend y Angular para el frontend. La gestión de datos se realiza mediante una base de datos MySQL, permitiendo a los usuarios llevar a cabo operaciones CRUD de artículos. Destaca por su eficiente almacenamiento de imágenes a través de la integración con Cloudinary, una plataforma de gestión de activos multimedia en la nube. La seguridad se refuerza con un sistema basado en JSON Web Tokens (JWT), que garantiza autenticación y autorización apropiadas para transacciones seguras y operaciones en la tienda online. ",
+    // link: '',
+    github:
+      "https://github.com/DeiMoS-es/Angular/tree/main/013-spring-apirest-front",
+    image: "img/projects/apiRest.webp",
+    tags: [TAGS.SPRINGBOOT, TAGS.TAILDWIND, TAGS.MySQL],
+  },
 ];
 ---
+
 <section class="flex flex-col gap-y-16">
-{
-    PROJETS.map(({title, image, description, tags, link, github}) => (
-        <article>
-            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
-            <p class="text-lg mb-4 text-pretty">{description}</p>
-            <ul class="flex gap-x-2 flex-row mb-2">
-                {tags.map(tag => (
-                    <li>
-                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
-                            <tag.icon class="size-4"/>
-                            {tag.name}
-                        </span>
-                    </li>
-                ))}
-            </ul>
-            <img class="rounded shadow-2xl shadow-white/10" src={image} alt={`Captura de pantalla del proyecto ${image}`}>
-            <footer class="flex gap-x-4 mt-4">
-                {github && <LinkButton href={github}>
-                        <GitHubIcon class="size-6"/> Ver código fuente
-                    </LinkButton>
-                }
-                {link &&<LinkButton>
-                    <WebIcon />
-                    Ir al sitio Web
-                </LinkButton>
-            }
-            </footer>
-        </article>
+  {
+    PROJETS.map(({ title, image, description, tags, link, github }) => (
+      <article>
+        <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+        <p class="text-lg mb-4 text-pretty">{description}</p>
+        <ul class="flex gap-x-2 flex-row mb-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <img
+          class="rounded shadow-2xl shadow-white/10"
+          src={image}
+          alt={`Captura de pantalla del proyecto ${image}`}
+        />
+        <footer class="flex gap-x-4 mt-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHubIcon class="size-6" /> Ver código fuente
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <WebIcon />
+              Ir al sitio Web
+            </LinkButton>
+          )}
+        </footer>
+      </article>
     ))
-}
+  }
 </section>
