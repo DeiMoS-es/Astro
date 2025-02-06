@@ -48,5 +48,20 @@
     "grupo": "Experiencia Laboral",
     "clave": "años",
     "valor": "2"
+  },
+  {
+    "grupo": "información extra",
+    "clave": "yo",
+    "valor": "Mi primer contacto con la psicología fue con 16 años, cuando comencé a estudiarla como materia optativa, justo cuando tenía que ir definiendo hacia dónde quería enfocarme en mi futuro profesional. Todos aquellos primeros aprendizajes junto a vivencias personales en las que personas de mi alredor no se encontraban en su mejor momento emocional, me llevó a conectar con lo que hoy puedo decir que es mi mayor vocación. Fue entonces cuando supe que quería dedicarme a ayudar a los demás, contribuir a su bienestar y ejercer como Psicóloga."
+  },
+  {
+    "grupo": "información extra",
+    "clave": "yo",
+    "valor": "Me gradué en Psicología por la Universidad de La Laguna en 2015, con especialización en el área clínica realizando las prácticas en el Instituto Fénix de Psicología. Posteriormente, realicé el Máster en Psicología General Sanitaria en la misma universidad en el año 2017, desarrollando las prácticas en la consulta privada de Dª Milagros Armas. Actualmente soy miembro del Colegio Oficial de Psicología de Las Palmas (col. P-02254)."
+  },
+  {
+    "grupo": "información extra",
+    "clave": "yo",
+    "valor": "A lo largo de estos años trabajando en el ámbito clínico privado con adultos y parejas he ido ampliando experiencia y formación, confirmando con cada caso que llega a mis manos lo que me apasiona la Psicología, pero aún más las personas y su capacidad de cambio."
   }
 ]

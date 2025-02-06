@@ -2,8 +2,17 @@
 import Layout from "../layouts/Layout.astro";
 import '../styles/about.css'; 
 import data from "../json/sobre_mi.json";
-console.log(data);
+
+const sobreMi = data.filter(item => item.grupo.toLowerCase() === "datos personales");
+// Extraer los valores de nombre, apellido y edad
+const nombre = sobreMi.find(item => item.clave.toLowerCase() === "nombre")?.valor || "";
+const apellido = sobreMi.find(item => item.clave.toLowerCase() === "apellido")?.valor || "";
+const edad = sobreMi.find(item => item.clave.toLowerCase() === "edad")?.valor || "";
+
+const formacion = data.filter(item => item.grupo.toLowerCase() === "formación académica");
+const experiencia = data.filter(item => item.grupo.toLowerCase() === "experiencia laboral");
+
 ---
 <Layout title="Sobre mi">
-    <h1>Aqui hablo sobre mi!</h1>
+    
 </Layout>

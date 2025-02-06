@@ -8,31 +8,29 @@ import Papa from "papaparse";
 import jsonfile from "jsonfile";
 
 const mainUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ9MAoGS7C6iChQCUYq5x8czgdiANxkNYxTA4iGjiWMIUgz28a8GJEUKbGKwhiB_y-HgJi72EzO0DNK/pub?gid=0&single=true&output=csv";
-// console.log(data);
-async function fecthAndSaveData(){
-    try{
+
+async function fecthAndSaveData() {
+    try {
         const csvData = await fetch(mainUrl).then(res => res.text());
         const parsedData = Papa.parse(csvData, { header: true });
         const jsonData = parsedData.data;
         const rutaJson = 'E:/Repositorios/Astro/nadi-web/src/json/data.json';
-        // const rutaJsonServidor = ;
         await jsonfile.writeFile(rutaJson, jsonData, { spaces: 2 });
-        fetchAndSaveDataBySheet(jsonData);
+        await fetchAndSaveDataBySheet(jsonData);
         console.log("Datos guardados en: ", rutaJson);
-    }
-    catch(error){
+    } catch (error) {
         console.error("Error al obtener los datos: ", error);
     }
 };
-async function fetchAndSaveDataBySheet(jsonData){
-    for(const element of jsonData){
-        if(element.url != '' && element.url != null){
+
+async function fetchAndSaveDataBySheet(jsonData) {
+    for (const element of jsonData) {
+        if (element.url !== '' && element.url !== null) {
             const url = element.url;
             try {
                 const csvData = await fetch(url).then(res => res.text());
                 const parsedData = Papa.parse(csvData, { header: true });
-                const filteredData = parsedData.data.filter(row => Object.values(row).some(value => String(value).trim() !== '')); 
-                const jsonData = parsedData.data;
+                const filteredData = parsedData.data.filter(row => Object.values(row).some(value => String(value).trim() !== ''));
                 const rutaJson = `E:/Repositorios/Astro/nadi-web/src/json/${element.pestaña}.json`;
                 await jsonfile.writeFile(rutaJson, filteredData, { spaces: 2 });
                 console.log("Datos guardados en: ", rutaJson);
@@ -42,21 +40,20 @@ async function fetchAndSaveDataBySheet(jsonData){
         }
     }
 };
+
+// Ejecutar la función asíncrona fuera del ciclo de renderizado
 fecthAndSaveData();
 ---
+
 <!-- página principal (home) -->
-<Layout title="Welcome to NadiWeb.">	
-	<div class="personal">
-		<span class="saludo"><h2>¡Hola! Soy Nadira Delgado</h2></span>
-		<span class="textBox">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam perferendis, rerum sequi distinctio, voluptatem assumenda sunt hic natus possimus consequatur libero eos earum itaque totam quibusdam magni eligendi molestiae minus!</span>			
-		<span class="imgBox">
-			<img src="/img/avatar.jpg" alt="Img de nadira"> 
-		</span>
-	</div>
-	<!-- <section class="cita">
-		<h2>¿Listo para Empezar tu Viaje de Bienestar?</h2>
-		<a href="" target="_blank" class="btn">Pide tu Cita</a> 
-	</section>-->
-	<Formacion />
-	<SocialLinks />
+<Layout title="Welcome to NadiWeb.">    
+    <div class="personal">
+        <span class="saludo"><h2>¡Hola! Soy Nadira Delgado</h2></span>
+        <span class="textBox">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam perferendis, rerum sequi distinctio, voluptatem assumenda sunt hic natus possimus consequatur libero eos earum itaque totam quibusdam magni eligendi molestiae minus!</span>         
+        <span class="imgBox">
+            <img src="/img/avatar.jpg" alt="Img de nadira"> 
+        </span>
+    </div>
+    <Formacion />
+    <SocialLinks />
 </Layout>
