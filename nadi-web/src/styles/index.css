@@ -1,20 +1,96 @@
-.personal{
+.imgBackground{
+  position: absolute; /* posicionada dentro de .inicio */
+  top: 0;
+  left: 0;
+  width: 100%; /* ocupa todo el ancho */
+  height: 50vh; /* ocupa aproximadamente la mitad de la pantalla en alto */
+  min-height: 320px;
+  object-fit: cover; /* recorta para mantener proporción */
+  /* Centrar el recorte en la cara de la chica: ajustar 35% si hace falta */
+  object-position: center 35%;
+  z-index: 1; /* detrás del contenido pero encima del fondo */
+  opacity: 0.6;
+}
+.cita{
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
 }
-.personal .saludo{
-    font-size: 2rem;
-    font-weight: 700;
-    color: #331047;
-    text-align: center;
-    width: 24rem;
+.cita button{
+    background-color: #331047;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
-.personal .textBox{
-    width: 24rem;
-    margin: 1rem;
+.cita button:hover{
+    background-color: #4b1a6b;
+}   
+
+/* 1. Estilos para el contenedor principal */
+.inicio {
+  position: relative; /* Clave para posicionar la imagen y el contenido dentro */
+  width: 100%;
+  height: 50vh; /* la sección ocupa la mitad de la ventana */
+  min-height: 320px;
+  overflow: hidden; /* Para asegurar que nada se salga */
+  display: flex; /* Para ayudar a alinear el contenido */
+  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  text-align: center; /* Centra el texto dentro del contenido */
+  padding-bottom: 0; /* el contenido queda centrado sobre la imagen */
 }
-.personal .imgBox img{
-    border-radius: 50%;
+
+/* 2. Estilos para la imagen de fondo */
+/* 2. Estilos para la imagen de fondo */
+/* Nota: `.imgBackground` se usa en `src/pages/index.astro` */
+
+/* Responsivo: en pantallas pequeñas hacemos que la imagen ocupe todo el ancho
+   y se posicione detrás del contenido para que el texto sea legible */
+@media (max-width: 800px) {
+  .imgBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    object-position: center 30%;
+    opacity: 0.5;
+  }
+  .inicio {
+    height: 50vh;
+    min-height: 420px;
+  }
+  .contenido-superpuesto {
+    padding: 1rem;
+    color: #fff; /* asegurar contraste sobre la imagen */
+  }
+}
+
+/* 3. Estilos para el degradado (usando un pseudoelemento) */
+.inicio::before {
+  content: ''; /* Necesario para que se muestre el pseudoelemento */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* El degradado de abajo hacia arriba */
+  background: linear-gradient(to top, 
+    hsl(var(--background)), /* Color de fondo sólido */
+    hsla(var(--background), 0.8), /* Mismo color pero semitransparente */
+    transparent /* Totalmente transparente arriba */
+  );
+  z-index: 2; /* Lo pone encima de la imagen pero debajo del contenido */
+}
+
+/* 4. Estilos para el contenedor del contenido */
+.contenido-superpuesto {
+  position: relative; /* Para asegurar que se renderice correctamente */
+  z-index: 3; /* Lo pone por encima del degradado y la imagen */
+  /* Aquí irían más estilos para el color del texto, tamaño, etc. */
 }

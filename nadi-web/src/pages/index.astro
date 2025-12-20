@@ -1,51 +1,76 @@
 ---
 import "../styles/reset.css";
 import "../styles/index.css";
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import backGroundImg from "../../public/img/sonrrisa.webp";
 import SocialLinks from "../components/social/SocialLinks.astro";
 import Formacion from "../components/formacion/Formacion.astro";
 import Papa from "papaparse";
 import jsonfile from "jsonfile";
 
-const mainUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ9MAoGS7C6iChQCUYq5x8czgdiANxkNYxTA4iGjiWMIUgz28a8GJEUKbGKwhiB_y-HgJi72EzO0DNK/pub?gid=0&single=true&output=csv";
+const mainUrl =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ9MAoGS7C6iChQCUYq5x8czgdiANxkNYxTA4iGjiWMIUgz28a8GJEUKbGKwhiB_y-HgJi72EzO0DNK/pub?gid=0&single=true&output=csv";
 
 async function fecthAndSaveData() {
-    try {
-        const csvData = await fetch(mainUrl).then(res => res.text());
-        const parsedData = Papa.parse(csvData, { header: true });
-        const jsonData = parsedData.data;
-        const rutaJson = 'E:/Repositorios/Astro/nadi-web/src/json/data.json';
-        await jsonfile.writeFile(rutaJson, jsonData, { spaces: 2 });
-        await fetchAndSaveDataBySheet(jsonData);
-        console.log("Datos guardados en: ", rutaJson);
-    } catch (error) {
-        console.error("Error al obtener los datos: ", error);
-    }
-};
+  try {
+    const csvData = await fetch(mainUrl).then((res) => res.text());
+    const parsedData = Papa.parse(csvData, { header: true });
+    const jsonData = parsedData.data;
+    const rutaJson = "E:/Repositorios/Astro/nadi-web/src/json/data.json";
+    await jsonfile.writeFile(rutaJson, jsonData, { spaces: 2 });
+    await fetchAndSaveDataBySheet(jsonData);
+    console.log("Datos guardados en: ", rutaJson);
+  } catch (error) {
+    console.error("Error al obtener los datos: ", error);
+  }
+}
 
 async function fetchAndSaveDataBySheet(jsonData) {
-    for (const element of jsonData) {
-        if (element.url !== '' && element.url !== null) {
-            const url = element.url;
-            try {
-                const csvData = await fetch(url).then(res => res.text());
-                const parsedData = Papa.parse(csvData, { header: true });
-                const filteredData = parsedData.data.filter(row => Object.values(row).some(value => String(value).trim() !== ''));
-                const rutaJson = `E:/Repositorios/Astro/nadi-web/src/json/${element.pestaña}.json`;
-                await jsonfile.writeFile(rutaJson, filteredData, { spaces: 2 });
-                console.log("Datos guardados en: ", rutaJson);
-            } catch (error) {
-                console.error("Error al obtener los datos: ", error);
-            }
-        }
+  for (const element of jsonData) {
+    if (element.url !== "" && element.url !== null) {
+      const url = element.url;
+      try {
+        const csvData = await fetch(url).then((res) => res.text());
+        const parsedData = Papa.parse(csvData, { header: true });
+        const filteredData = parsedData.data.filter((row) =>
+          Object.values(row).some((value) => String(value).trim() !== "")
+        );
+        const rutaJson = `E:/Repositorios/Astro/nadi-web/src/json/${element.pestaña}.json`;
+        await jsonfile.writeFile(rutaJson, filteredData, { spaces: 2 });
+        console.log("Datos guardados en: ", rutaJson);
+      } catch (error) {
+        console.error("Error al obtener los datos: ", error);
+      }
     }
-};
+  }
+}
 
 // Ejecutar la función asíncrona fuera del ciclo de renderizado
 fecthAndSaveData();
 ---
 
-<!-- página principal (home) -->
+<Layout title="Welcome to NadiWeb.">
+  <div class="inicio">
+    <Image
+      class="imgBackground"
+      src={backGroundImg}
+      alt="Descripción de la imagen"
+    />
+    <div class="contenido-superpuesto">
+      <h1 class="enunciado">Encuentra tu equilibrio y bienestar</h1>
+      <p>
+        Te acompaño en tu proceso de crecimiento personal y sanación emocional.
+        Un camino hacia una vida más plena y consciente.
+      </p>
+      <div class="cita">
+        <button>Reservar una primera sesión</button>
+        <button> <a href="/servicios">Ver servicios</a> </button>
+      </div>
+    </div>
+  </div>
+</Layout>
+<!-- página principal (home) 
 <Layout title="Welcome to NadiWeb.">    
     <div class="personal">
         <span class="saludo"><h2>¡Hola! Soy Nadira Delgado</h2></span>
@@ -57,3 +82,4 @@ fecthAndSaveData();
     <Formacion />
     <SocialLinks />
 </Layout>
+-->

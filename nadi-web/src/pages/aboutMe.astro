@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import '../styles/about.css'; 
+import '../styles/index.css';
 import data from "../json/sobre_mi.json";
 
 const sobreMi = data.filter(item => item.grupo.toLowerCase() === "datos personales");
@@ -13,6 +14,59 @@ const formacion = data.filter(item => item.grupo.toLowerCase() === "formación a
 const experiencia = data.filter(item => item.grupo.toLowerCase() === "experiencia laboral");
 
 ---
-<Layout title="Sobre mi">
-    <h1>Hola</h1>
+<Layout title="Sobre mí">
+  <section class="about-me">
+    <div class="hero-about">
+      <div class="intro-text">
+        <h1 class="title">Hola, soy {nombre}</h1>
+        <p class="subtitle">Psicóloga Clínica y Terapeuta de Sexualidad</p>
+        
+        <div class="bio-narrative">
+          <p>
+            Entiendo la terapia como un <strong>espacio de refugio y transformación</strong>. 
+            A lo largo de mi trayectoria, mi propósito ha sido acompañar a personas a transitar sus momentos más difíciles, 
+            ayudándoles a reencontrar su propia voz y fortaleza.
+          </p>
+          <p>
+            Mi experiencia me ha enseñado que, sin importar cuán compleja sea la situación, 
+            siempre existe un camino hacia la sanación cuando se camina en compañía y con las herramientas adecuadas.
+          </p>
+        </div>
+      </div>
+      <div class="profile-image">
+        <img src="/path-to-photo.jpg" alt={nombre} />
+      </div>
+    </div>
+
+    <div class="approach-section">
+      <h2>Mi enfoque y formación</h2>
+      <p>
+        Como especialista en <strong>Psicología Clínica</strong> y <strong>Terapia de Sexualidad</strong>, 
+        integro diferentes herramientas para ofrecerte un apoyo integral. He dedicado gran parte de mi carrera 
+        al trabajo con mujeres en etapas de alta vulnerabilidad y procesos de duelo o salud, 
+        lo que me ha dotado de una sensibilidad especial para entender el dolor y convertirlo en resiliencia.
+      </p>
+      
+      <div class="specialties-grid">
+        <div class="card">
+          <h3>Clínica</h3>
+          <p>Abordaje profundo de procesos emocionales y bienestar mental.</p>
+        </div>
+        <div class="card">
+          <h3>Sexualidad</h3>
+          <p>Un espacio seguro para explorar la identidad, el deseo y la plenitud.</p>
+        </div>
+        <div class="card">
+          <h3>Acompañamiento</h3>
+          <p>Especializada en procesos de vida complejos y apoyo en situaciones críticas.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-section">
+        <h3>¿Empezamos este proceso juntas?</h3>
+        <p>No tienes que transitar este camino a solas. Estoy aquí para escucharte.</p>
+        <a href="/contacto" class="btn-primary">Reservar una primera sesión</a>
+    </div>
+  </section>
 </Layout>

@@ -1,14 +1,31 @@
 header {
-    background: #331047;
+    background: #FAFAFF;
     width: 100vw;
     height: auto;
     color: white;
     padding: 1rem;
     text-align: center;
 }
+.logo { display: flex;align-items: center;}
+.logo p{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #331047;
+    margin-left: 0.5rem;
+}
+.logo img{
+    width: 40px;
+    height: 40px;
+}
+div.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
 nav ul {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
     list-style: none;
@@ -20,7 +37,7 @@ nav a {
     align-items: center;
     text-decoration: none;
     transition: transform 0.3s ease, text-decoration 0.3s ease;
-    color: white;
+    color: #705CD6;
     margin-right: 1rem;
 }
 nav a:hover {

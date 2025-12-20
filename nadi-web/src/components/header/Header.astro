@@ -2,73 +2,80 @@
 import "./Header.css";
 import HeaderButton from "./HeaderButton.astro";
 ---
+
 <header>
-  <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h1>
   <nav>
     <ul>
-      <li>
-        <HeaderButton href="/">
-          <svg
-            slot="before"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M5 12l-2 0l9 -9l9 9l-2 0"></path>
-            <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
-            <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
-          </svg>
-          Home
-        </HeaderButton>
-      </li>
-      <li>
-        <HeaderButton href="/aboutMe">
-          <svg
-            slot="before"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class=""
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
-            <path d="M12 9h.01"></path><path d="M11 12h1v4h1"></path>
-          </svg>
-          Sobre Mi
-        </HeaderButton>
-      </li>
-      <li>
-        <HeaderButton href="/services">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="icon icon-tabler icons-tabler-outline icon-tabler-heart"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path
-              d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"
-            ></path>
-          </svg>
-          Servicios</HeaderButton>
-      </li>
+      <div class="logo">
+        <img src="../../../public/img/icons/psicologia.png" alt="logo.webp">
+        <p>PsicoConecta</p>
+      </div>
+      <div class="buttons">
+        <li>
+          <HeaderButton href="/">
+            <svg
+              slot="before"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M5 12l-2 0l9 -9l9 9l-2 0"></path>
+              <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
+              <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
+            </svg>
+            Home
+          </HeaderButton>
+        </li>
+        <li>
+          <HeaderButton href="/aboutMe">
+            <svg
+              slot="before"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class=""
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
+              <path d="M12 9h.01"></path><path d="M11 12h1v4h1"></path>
+            </svg>
+            Sobre Mi
+          </HeaderButton>
+        </li>
+        <li>
+          <HeaderButton href="/services">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-heart"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"
+              ></path>
+            </svg>
+            Servicios
+          </HeaderButton>
+        </li>
+      </div>
     </ul>
   </nav>
 </header>
