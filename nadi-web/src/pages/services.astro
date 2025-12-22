@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ServiceCard from '../components/services/servicesCard.astro';
+import { getCollection } from 'astro:content';
+
+// 1. Buscamos todos los archivos en src/content/services/
+const serviciosData = await getCollection('services');
+---
+
+<Layout title="Mis Servicios">
+  <section class="grid">
+    {serviciosData.map(item => (
+      // 2. Por cada uno, pintamos una ServiceCard
+      <ServiceCard 
+        title={item.data.title}
+        description={item.data.description}
+        imagePath={item.data.image}
+        icon={item.data.icon}
+      />
+    ))}
+  </section>
+</Layout>
+
+<style>
+  .grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 768px) {
+    .grid {
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      padding: 12px;
+    }
+  }
+</style>
