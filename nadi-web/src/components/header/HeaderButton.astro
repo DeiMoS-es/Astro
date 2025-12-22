@@ -1,11 +1,9 @@
 ---
 // Props
-interface Props {
-    href: string;
-}
-const { href } = Astro.props as Props;
+// Aceptamos y reenviamos cualquier atributo adicional (ej. `class`)
+const { href, class: extraClass, ...rest } = Astro.props as any;
 ---
-<a class="headerButton" href={href} >
+<a class={`headerButton ${extraClass ?? ''}`} href={href} {...rest}>
     <slot name="before"/>
     <slot />
     <slot name="after"/>

@@ -1,10 +1,17 @@
-header {
+.header, header {
     background: #FAFAFF;
     width: 100vw;
     height: auto;
     color: white;
     padding: 1rem;
     text-align: center;
+}
+.site-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    position: relative;
 }
 .logo { display: flex;align-items: center;}
 .logo p{
@@ -17,20 +24,14 @@ header {
     width: 40px;
     height: 40px;
 }
-div.buttons{
+.nav-right{ display:flex; align-items:center; gap:0.5rem; }
+.nav-items {
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
-nav ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
     gap: 1rem;
     list-style: none;
-    padding-top: 1rem;
-    font-weight: 100;
+    margin: 0;
+    padding: 0;
+    align-items: center;
 }
 nav a {
     display: flex;
@@ -46,4 +47,112 @@ nav a:hover {
 }
 nav a svg {
     margin-right: 0.5rem;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    fill: none; /* asegurar que no se rellenen formas internas */
+    stroke: currentColor; /* heredar color del enlace */
+    stroke-width: 2;
+}
+/* algunas SVGs (exportadas desde editores) usan clases internas como .st0 */
+nav a svg .st0{
+    fill: none;
+    stroke: currentColor;
+}
+
+.cita.contacto{
+    margin-top: 0;
+    background-color: #8234af;
+    color: white;
+    border: none;
+    padding: 0.75rem 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+.cita.contacto a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Contact button when used outside li */
+.contact-outer .headerButton,
+.contact-button{
+    background-color: #8234af;
+    color: #fff;
+    padding: 0.6rem 0.9rem;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ocultar la versión externa por defecto (solo mostrar en móvil) */
+.contact-outer{ display: none; }
+
+/* Hamburger */
+.hamburger{
+    display: none;
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.hamburger span{
+    display: block;
+    height: 2px;
+    width: 18px;
+    background: #705CD6;
+    margin: 3px 0;
+    border-radius: 2px;
+}
+
+/* Desktop: ensure nav-items visible inline */
+.site-nav .nav-items { display:flex; }
+
+/* Responsive: tablet */
+@media (max-width: 1024px) {
+    header { padding: 0.9rem; }
+    .logo img{ width: 36px; height: 36px; }
+    nav ul { gap: 0.75rem; padding-top: 0.75rem; }
+    nav a { margin-right: 0.6rem; font-size: 0.95rem; }
+    nav a svg { width: 20px; height: 20px; }
+}
+
+/* Responsive: móvil */
+@media (max-width: 768px) {
+    .site-nav{
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0 0.5rem;
+    }
+    .logo{ order: 1; width: auto; }
+    .logo p{ display: none; } /* ocultar texto del logo en móvil */
+    .nav-right{ order: 2; }
+    .contact-outer{ display: inline-block; }
+    .hamburger{ display: inline-flex; }
+    /* hide inline nav items, show when nav.open */
+    .site-nav .nav-items{ display: none; }
+    .site-nav.open .nav-items{
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #FAFAFF;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        z-index: 50;
+    }
+    .site-nav .nav-items li{ width: 100%; }
+    .site-nav .nav-items a{ display:flex; padding: 0.75rem 1rem; width:100%; }
+    /* hide the contact item inside menu on mobile (we show external one) */
+    .site-nav .nav-items .cita.contacto{ display: none; }
 }

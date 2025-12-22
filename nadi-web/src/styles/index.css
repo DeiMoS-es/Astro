@@ -18,7 +18,7 @@
     margin-top: 1rem;
 }
 .cita button{
-    background-color: #331047;
+    background-color: #8234af;
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -93,4 +93,23 @@
   position: relative; /* Para asegurar que se renderice correctamente */
   z-index: 3; /* Lo pone por encima del degradado y la imagen */
   /* Aquí irían más estilos para el color del texto, tamaño, etc. */
+}
+
+/* Responsive: tablet */
+@media (max-width: 1024px) {
+  .inicio { height: 55vh; min-height: 360px; }
+  .imgBackground { height: 55vh; object-position: center 38%; }
+  .contenido-superpuesto { padding: 1rem; }
+  .contenido-superpuesto .enunciado { font-size: 1.9rem; }
+  .cita button { font-size: 0.95rem; padding: 0.6rem 1.2rem; }
+}
+
+/* Responsive: móvil */
+@media (max-width: 768px) {
+  .inicio { height: 60vh; min-height: 420px; }
+  .imgBackground { height: 60vh; object-position: center 30%; opacity: 0.5; }
+  .contenido-superpuesto { padding: 1.25rem; color: #fff; }
+  .contenido-superpuesto .enunciado { font-size: 1.6rem; }
+  .cita { flex-direction: column; gap: 0.6rem; }
+  .cita button { width: 100%; max-width: 360px; }
 }
