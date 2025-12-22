@@ -1,19 +1,46 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import '../styles/about.css'; 
-import '../styles/index.css';
+import "../styles/about.css";
+import "../styles/index.css";
+import { Image } from "astro:assets";
+import avatar from "../../public/img/ella.webp";
 import data from "../json/sobre_mi.json";
 
-const sobreMi = data.filter(item => item.grupo.toLowerCase() === "datos personales");
+const sobreMi = data.filter(
+  (item) => item.grupo.toLowerCase() === "datos personales"
+);
 // Extraer los valores de nombre, apellido y edad
-const nombre = sobreMi.find(item => item.clave.toLowerCase() === "nombre")?.valor || "";
-const apellido = sobreMi.find(item => item.clave.toLowerCase() === "apellido")?.valor || "";
-const edad = sobreMi.find(item => item.clave.toLowerCase() === "edad")?.valor || "";
+const nombre =
+  sobreMi.find((item) => item.clave.toLowerCase() === "nombre")?.valor || "";
+const apellido =
+  sobreMi.find((item) => item.clave.toLowerCase() === "apellido")?.valor || "";
+const edad =
+  sobreMi.find((item) => item.clave.toLowerCase() === "edad")?.valor || "";
 
-const formacion = data.filter(item => item.grupo.toLowerCase() === "formación académica");
-const experiencia = data.filter(item => item.grupo.toLowerCase() === "experiencia laboral");
-
+const formacion = data.filter(
+  (item) => item.grupo.toLowerCase() === "formación académica"
+);
+const experiencia = data.filter(
+  (item) => item.grupo.toLowerCase() === "experiencia laboral"
+);
 ---
+
+<Layout title="Sobre mí">
+  <div class="about">
+    <div class="info">
+      <h1 class="title">Un Enfoque Humano y Profesional</h1>
+      <p class="description">Mi misión es crear un espacio de confianza donde puedas sentirte seguro/a para explorar tus emociones y encontrar tus propias fortalezas. Creo en una terapia colaborativa, adaptada a tus necesidades únicas.</p>
+    </div>
+    <div class="imagen">
+      <Image
+        src={avatar}
+        alt="Foto de {nombre} {apellido}"
+        class="avatar-about-me"
+      />
+    </div>
+  </div>
+</Layout>
+<!-- 
 <Layout title="Sobre mí">
   <section class="about-me">
     <div class="hero-about">
@@ -70,3 +97,4 @@ const experiencia = data.filter(item => item.grupo.toLowerCase() === "experienci
     </div>
   </section>
 </Layout>
+-->
