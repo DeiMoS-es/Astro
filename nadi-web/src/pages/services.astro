@@ -14,7 +14,7 @@ const serviciosData = await getCollection('services');
       <ServiceCard 
         title={item.data.title}
         description={item.data.description}
-        imagePath={item.data.image}
+        image={item.data.image}
         icon={item.data.icon}
       />
     ))}

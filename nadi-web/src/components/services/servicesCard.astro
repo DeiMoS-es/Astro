@@ -1,10 +1,19 @@
 ---
 import { Image } from 'astro:assets';
-const { title, description, imagePath, icon } = Astro.props;
+
+interface Props {
+  title: string;
+  description: string;
+  image: any; // object from astro:content image(), manteniendo flexibilidad
+  icon?: string;
+}
+
+const { title, description, image: imagePath, icon } = Astro.props as Props;
+
 ---
 
 <div class="card">
-  <Image src={imagePath} alt={title} width={200} />
+  <Image src={imagePath} alt={`${title} — ${description.slice(0, 100)}`} width={280} sizes="(max-width: 768px) 100vw, 280px" />
   <div class="info">
     <h3>{title} {icon && <span>{icon}</span>}</h3>
     <p>{description}</p>
@@ -13,21 +22,21 @@ const { title, description, imagePath, icon } = Astro.props;
 
 <style>
   .card {
-    width: 50%;
-    max-width: 760px;
-    min-width: 280px;
+    width: 100%;
+    max-width: 880px;
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
+    flex-direction: row-reverse; /* imagen a la derecha en escritorio (fila invertida) */
+    gap: 0;
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
-    background-color: rgba(138, 43, 226, 0.12);
-    color: #333;
+    background-color: rgba(138, 43, 226, 0.06);
+    color: #111;
+    align-items: stretch;
   }
   .card img {
-    width: 200px;
-    padding: 10px;
+    width: 280px;
+    padding: 0;
     height: auto;
     object-fit: cover;
   }
@@ -37,11 +46,10 @@ const { title, description, imagePath, icon } = Astro.props;
 
   @media (max-width: 768px) {
     .card {
-      width: 100%;
-      max-width: 320px;
-      flex-direction: column-reverse;
+      flex-direction: column; /* columna en móvil */
+      max-width: 100%;
     }
-    .card img { width: 100%; object-fit: cover;}
+    .card img { width: 100%; height: 220px; object-fit: cover; }
     .info { padding: 0.75rem; }
   }
 </style>
