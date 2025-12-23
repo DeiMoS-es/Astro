@@ -12,7 +12,8 @@
   "dependencies": {
     "@fontsource/lato": "^5.1.0",
     "@fontsource/roboto": "^5.1.0",
-    "astro": "^4.16.13",
+    "@vercel/analytics": "^1.6.1",
+    "astro": "^5.16.6",
     "jsonfile": "^6.1.0",
     "papaparse": "^5.4.1",
     "xlsx": "^0.18.5"

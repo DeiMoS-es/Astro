@@ -1,73 +1,112 @@
 ---
 interface Props {
-	title: string;
-	description?: string;
- 	image?: string;
- 	url?: string;
+  title: string;
+  description?: string;
+  image?: string;
+  url?: string;
 }
 
 const { title, description, image, url } = Astro.props;
-import '@fontsource/lato';
-import Header from '../components/header/Header.astro';
-import Footer from '../components/footer/Footer.astro';
-import '../styles/reset.css';
+import "@fontsource/lato";
+import Header from "../components/header/Header.astro";
+import Footer from "../components/footer/Footer.astro";
+import "../styles/reset.css";
 import { Image } from "astro:assets";
 import backGroundImg from "../../public/img/backGroundImg.webp";
 ---
- 
 
 <!doctype html>
 <html lang="es-ES">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={description ?? 'PsicoConecta - Servicios de psicología y terapia'} />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<link rel="canonical" href={url ?? (Astro.site ? String(Astro.site) : '/') } />
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content={description ??
+        "PsicoConecta - Servicios de psicología y terapia"}
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link
+      rel="canonical"
+      href={url ?? (Astro.site ? String(Astro.site) : "/")}
+    />
 
-		<!-- Open Graph / Twitter -->
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description ?? 'PsicoConecta - Servicios de psicología y terapia'} />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content={url ?? (Astro.site ? String(Astro.site) : '/') } />
-		{image && <meta property="og:image" content={image} />}
-		<meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
-		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={description ?? 'PsicoConecta - Servicios de psicología y terapia'} />
-	</head>
-	<body>		
-		<Header />
-		<main>
-			<slot />		
-		</main>
-		<Footer />	
-	</body>
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content={title} />
+    <meta
+      property="og:description"
+      content={description ??
+        "PsicoConecta - Servicios de psicología y terapia"}
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content={url ?? (Astro.site ? String(Astro.site) : "/")}
+    />
+    {image && <meta property="og:image" content={image} />}
+    <meta
+      name="twitter:card"
+      content={image ? "summary_large_image" : "summary"}
+    />
+    <meta name="twitter:title" content={title} />
+    <meta
+      name="twitter:description"
+      content={description ??
+        "PsicoConecta - Servicios de psicología y terapia"}
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <script is:inline>
+      window.va =
+        window.va ||
+        function () {
+          (window.vaq = window.vaq || []).push(arguments);
+        };
+    </script>
+    <script async src="/_vercel/insights/script.js"></script>
+  </body>
 </html>
-<style is:global>	
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-		
-	}
-	html, body {
-		font-family: 'Alegreya','Lato', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, "Noto Sans", "Segoe UI Emoji", "Segoe UI Symbol";
-		background-image: url('/img/backGroundImg.webp'); /* Ruta directa desde la raíz */
-        background-size: cover;
-        background-position: center;
-		color: #fff;
-	}
-	main{
-    	width: 100vw;
-    	min-height: 40vh;
-    	margin-top: 1rem;
-	}
+<style is:global>
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+  html,
+  body {
+    font-family:
+      "Alegreya",
+      "Lato",
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      "Noto Sans",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    background-image: url("/img/backGroundImg.webp"); /* Ruta directa desde la raíz */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+  }
+  main {
+    width: 100vw;
+    min-height: 40vh;
+    margin-top: 1rem;
+  }
 </style>
